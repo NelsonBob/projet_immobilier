@@ -5,13 +5,15 @@ contract MarketPlace {
 
     struct Apartment {
         address owner;
+        string name;
+
         string title;
         string description;
         uint256 target;
         uint256 deadline;
         uint256 amountappartment;
         string image;
-        address[] senders;
+        address[] senderappartment;
         uint256[] senderamount;
     }
 
@@ -19,7 +21,7 @@ contract MarketPlace {
 
     uint256 public numberOfApartments = 0;
 
-    function createApartment(address _owner, string memory _title, string memory _description, uint256 _target, uint256 _deadline, string memory _image) public returns (uint256) {
+    function createApartment(address _owner, string memory _title, string memory _name, string memory _description, uint256 _target, uint256 _deadline, string memory _image) public returns (uint256) {
       Apartment storage apartment = apartments[numberOfApartments]; 
 
       // is everything okay?
@@ -28,10 +30,13 @@ contract MarketPlace {
 
        apartment.owner = _owner;
        apartment.title = _title;
+       apartment.name = _name;
+
        apartment.description = _description;
        apartment.target = _target;
        apartment.deadline = _deadline;
        apartment.amountappartment = 0;
+       apartment.image = _image;
        numberOfApartments++;
 
        return numberOfApartments-1;
@@ -46,7 +51,7 @@ contract MarketPlace {
 
         Apartment storage apartment = apartments[_id];
 
-        apartment.senders.push(msg.sender);
+        apartment.senderappartment.push(msg.sender);
         apartment.senderamount.push(amount);
 
         (bool sent,) =  payable(apartment.owner).call{value: amount}("");
@@ -58,7 +63,7 @@ contract MarketPlace {
     }
 
     function getSender(uint256 _id) view public returns (address[] memory, uint256[] memory){
-        return (apartments[_id].senders, apartments[_id].senderamount);
+        return (apartments[_id].senderappartment, apartments[_id].senderamount);
     }
 
     function getApartments() public view returns (Apartment[] memory) {

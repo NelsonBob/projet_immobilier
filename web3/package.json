@@ -3,13 +3,31 @@
   "scripts": {
     "build": "npx thirdweb@latest detect",
     "deploy": "npx thirdweb@latest deploy",
+    "test": "npx hardhat test",
     "release": "npx thirdweb@latest release"
   },
   "devDependencies": {
-    "hardhat": "^2.10.1"
+    "@chainlink/contracts": "^0.4.0",
+    "@ethersproject/abi": "^5.7.0",
+    "@ethersproject/providers": "^5.7.2",
+    "@nomicfoundation/hardhat-chai-matchers": "^1.0.5",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.6",
+    "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "@nomiclabs/hardhat-ethers": "^2.0.5",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.12.1",
+    "hardhat-gas-reporter": "^1.0.9",
+    "solidity-coverage": "^0.7.22",
+    "tailwindcss": "^3.2.4",
+    "typechain": "^8.1.0"
   },
   "dependencies": {
+    "@openzeppelin/contracts": "^4.7.3",
     "@thirdweb-dev/contracts": "^3",
-    "dotenv": "^16.0.3"
+    "chai": "4.3.7",
+    "dotenv": "^16.0.3",
+    "openzeppelin-solidity": "^3.4.2",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "web3": "^1.8.1"
   }
 }
