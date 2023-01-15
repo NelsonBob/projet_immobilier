@@ -1,0 +1,40 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "D:\\DEVOPS\\projets\\Blockchain\\final\\market-place\\web3\\contracts\\MarketPlace.sol": {
+      "lastModificationDate": 1673710859097,
+      "contentHash": "7deb90ec2a3f751a18975a12c15d9398",
+      "sourceName": "contracts/MarketPlace.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "MarketPlace"
+      ]
+    }
+  }
+}
