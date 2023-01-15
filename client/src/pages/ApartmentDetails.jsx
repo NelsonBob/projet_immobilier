@@ -52,8 +52,7 @@ console.log(remainingDays);
 
         <div className="flex md:w-[150px] w-full flex-wrap justify-between gap-[30px]">
           <CountBox title="Days Left" value={remainingDays} />
-          <CountBox title={`Raised of ${state.target}`} value={state.amountappartment} />
-          <CountBox title="Total Backers" value={amountappartment.length} />
+          <CountBox title={`Price Appartment ${state.target}`} value={state.amountappartment} />
         </div>
       </div>
 
@@ -68,7 +67,7 @@ console.log(remainingDays);
               </div>
               <div>
                 <h4 className="font-epilogue font-semibold text-[14px] text-white break-all">{state.owner}</h4>
-                <p className="mt-[4px] font-epilogue font-normal text-[12px] text-[#808191]">10 Apartments</p>
+                <p className="mt-[4px] font-epilogue font-normal text-[12px] text-[#808191]">{state.name}</p>
               </div>
             </div>
           </div>
@@ -81,20 +80,6 @@ console.log(remainingDays);
               </div>
           </div>
 
-          <div>
-            <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">amountappartment</h4>
-
-              <div className="mt-[20px] flex flex-col gap-4">
-                {amountappartment.length > 0 ? amountappartment.map((item, index) => (
-                  <div key={`${item.sender}-${index}`} className="flex justify-between items-center gap-4">
-                    <p className="font-epilogue font-normal text-[16px] text-[#b2b3bd] leading-[26px] break-ll">{index + 1}. {item.Sender}</p>
-                    <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] break-ll">{item.donation}</p>
-                  </div>
-                )) : (
-                  <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] text-justify">No amountappartment yet. Be the first one!</p>
-                )}
-              </div>
-          </div>
         </div>
 
         <div className="flex-1">

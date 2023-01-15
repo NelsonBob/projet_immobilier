@@ -1,4 +1,4 @@
-import { createApartment, dashboard, logout, payment, profile, withdraw } from '../assets';
+import { createApartment, dashboard, logout, profile } from '../assets';
 
 export const navlinks = [
   {
@@ -10,18 +10,6 @@ export const navlinks = [
     name: 'apartment',
     imgUrl: createApartment,
     link: '/create-apartment',
-  },
-  {
-    name: 'payment',
-    imgUrl: payment,
-    link: '/',
-    disabled: true,
-  },
-  {
-    name: 'withdraw',
-    imgUrl: withdraw,
-    link: '/',
-    disabled: true,
   },
   {
     name: 'profile',

@@ -24,7 +24,7 @@ const FundCard = ({ owner, title, description, target, deadline, amountappartmen
         <div className="flex justify-between flex-wrap mt-[15px] gap-2">
           <div className="flex flex-col">
             <h4 className="font-epilogue font-semibold text-[14px] text-[#b2b3bd] leading-[22px]">{amountappartment}</h4>
-            <p className="mt-[3px] font-epilogue font-normal text-[12px] leading-[18px] text-[#808191] sm:max-w-[120px] truncate">Raised of {target}</p>
+            <p className="mt-[3px] font-epilogue font-normal text-[12px] leading-[18px] text-[#808191] sm:max-w-[120px] truncate">Price Appartment {target}</p>
           </div>
           <div className="flex flex-col">
             <h4 className="font-epilogue font-semibold text-[14px] text-[#b2b3bd] leading-[22px]">{remainingDays}</h4>

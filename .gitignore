@@ -2,4 +2,5 @@
 .gitignore
 /web3/node_modules
 /client/node_modules
+/web3/truffle-config.js
 

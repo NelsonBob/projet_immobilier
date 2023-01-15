@@ -1,8 +1,7 @@
-import React, { useContext, createContext } from 'react';
+import React, { createContext, useContext } from 'react';
 
-import { useAddress, useContract, useMetamask, useContractWrite } from '@thirdweb-dev/react';
+import { useAddress, useContract, useContractWrite, useMetamask } from '@thirdweb-dev/react';
 import { ethers } from 'ethers';
-import { EditionMetadataWithOwnerOutputSchema } from '@thirdweb-dev/sdk';
 
 const StateContext = createContext();
 
@@ -32,10 +31,10 @@ export const StateContextProvider = ({ children }) => {
 
   const getApartments = async () => {
     const Apartment = await contract.call('getApartments');
-    console.log("dddddddddddddddddddddddddd "+Apartment[0].amountCollected)
     const parsedCampaings = Apartment.map((apartment, i) => ({
       owner: apartment.owner,
       title: apartment.title,
+      name: apartment.name,
       description: apartment.description,
       target: ethers.utils.formatEther(apartment.target.toString()),
       deadline: apartment.deadline.toNumber(),
@@ -88,7 +87,7 @@ export const StateContextProvider = ({ children }) => {
         getApartments,
         getUserApartment,
         donate,
-        getDonations
+        getDonations,
       }}
     >
       {children}
