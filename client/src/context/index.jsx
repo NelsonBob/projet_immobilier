@@ -60,20 +60,20 @@ export const StateContextProvider = ({ children }) => {
     return data;
   }
 
-  const getDonations = async (pId) => {
-    const donations = await contract.call('getDonators', pId);
-    const numberOfDonations = donations[0].length;
+  const getSender = async (pId) => {
+    const senders = await contract.call('getSender', pId);
+    const numberOfSenders = senders[0].length;
 
-    const parsedDonations = [];
+    const parsedSenters = [];
 
-    for(let i = 0; i < numberOfDonations; i++) {
-      parsedDonations.push({
-        donator: donations[0][i],
-        donation: ethers.utils.formatEther(donations[1][i].toString())
+    for(let i = 0; i < numberOfSenders; i++) {
+      parsedSenters.push({
+        senderappartment: senders[0][i],
+        senderamount: ethers.utils.formatEther(senders[1][i].toString())
       })
     }
 
-    return parsedDonations;
+    return parsedSenters;
   }
 
 
@@ -87,7 +87,7 @@ export const StateContextProvider = ({ children }) => {
         getApartments,
         getUserApartment,
         donate,
-        getDonations,
+        getSender,
       }}
     >
       {children}
