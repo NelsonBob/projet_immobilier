@@ -22,7 +22,7 @@ const Profile = () => {
 
   return (
     <DisplayApartments 
-      title="All Apartments"
+      title="My Apartments"
       isLoading={isLoading}
       Apartments={Apartments}
     />

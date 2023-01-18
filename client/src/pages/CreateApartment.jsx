@@ -14,8 +14,8 @@ const CreateApartment = () => {
     name: '',
     title: '',
     description: '',
-    target: '', 
     deadline: '',
+    amountappartment:'',
     image: '',
   });
 
@@ -29,7 +29,9 @@ const CreateApartment = () => {
     checkIfImage(form.image, async (exists) => {
       if(exists) {
         setIsLoading(true);
-        await createApartment({ ...form, target: ethers.utils.parseUnits(form.target, 18)});
+        await createApartment({ ...form});
+
+        // await createApartment({ ...form, target: ethers.utils.parseUnits(form.target, 18)});
         setIsLoading(false);
         navigate('/');
       } else {
@@ -50,7 +52,7 @@ const CreateApartment = () => {
         <div className="flex flex-wrap gap-[40px]">
           <FormField 
             labelName="Your Name *"
-            placeholder="John Doe"
+            placeholder="Bob Nelson"
             inputType="text"
             value={form.name}
             handleChange={(e) => handleFormFieldChange('name', e)}
@@ -71,16 +73,19 @@ const CreateApartment = () => {
             value={form.description}
             handleChange={(e) => handleFormFieldChange('description', e)}
           />
+          
 
        
 
         <div className="flex flex-wrap gap-[40px]">
+          
+          
           <FormField 
-            labelName="Goal *"
-            placeholder="ETH 0.50"
+            labelName="amount *"
+            placeholder="ETH 10"
             inputType="text"
-            value={form.target}
-            handleChange={(e) => handleFormFieldChange('target', e)}
+            value={form.amountappartment}
+            handleChange={(e) => handleFormFieldChange('amountappartment', e)}
           />
           <FormField 
             labelName="End Date *"
